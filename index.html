@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Perguntas 💖</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff6b81;
+      color: white;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #ff4757;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2 id="texto">Oi… responde com sinceridade 💖</h2>
+  <div id="areaBotoes">
+    <button onclick="iniciar()">Começar</button>
+  </div>
+</div>
+
+<script>
+  const perguntas = [
+    {
+      texto: "Você ainda pensa em mim?",
+      respostas: ["Sim", "Não", "Às vezes"]
+    },
+    {
+      texto: "O que a gente teve foi especial?",
+      respostas: ["Muito", "Um pouco", "Não"]
+    },
+    {
+      texto: "Existe chance da gente voltar?",
+      respostas: ["Sim", "Talvez", "Não"]
+    }
+  ];
+
+  let index = 0;
+
+  function iniciar() {
+    mostrarPergunta();
+  }
+
+  function mostrarPergunta() {
+    if (index >= perguntas.length) {
+      mostrarFinal();
+      return;
+    }
+
+    const p = perguntas[index];
+    document.getElementById("texto").innerText = p.texto;
+
+    const area = document.getElementById("areaBotoes");
+    area.innerHTML = "";
+
+    p.respostas.forEach(resposta => {
+      const btn = document.createElement("button");
+      btn.innerText = resposta;
+      btn.onclick = () => responder();
+      area.appendChild(btn);
+    });
+  }
+
+  function responder() {
+    index++;
+    mostrarPergunta();
+  }
+
+  function mostrarFinal() {
+    document.getElementById("texto").innerText = "Quer voltar comigo? 💍";
+
+    const area = document.getElementById("areaBotoes");
+    area.innerHTML = "";
+
+    const sim = document.createElement("button");
+    sim.innerText = "SIM ❤️";
+    sim.onclick = () => {
+      document.getElementById("texto").innerText = "Agora você não tem escolha 😏💖";
+      area.innerHTML = "";
+    };
+
+    const nao = document.createElement("button");
+    nao.innerText = "Não 😢";
+
+    nao.onmouseover = () => {
+      nao.style.position = "absolute";
+      nao.style.top = Math.random() * 80 + "%";
+      nao.style.left = Math.random() * 80 + "%";
+    };
+
+    area.appendChild(sim);
+    area.appendChild(nao);
+  }
+</script>
+
+</body>
+</html>
