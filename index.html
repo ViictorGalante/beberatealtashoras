@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Perguntas 💖</title>
+  <title>Cerveja e farra 💖</title>
 
   <style>
     body {
@@ -43,7 +43,7 @@
 <body>
 
 <div class="box">
-  <h2 id="texto">Oi… responde com sinceridade 💖</h2>
+  <h2 id="texto">Como cortamos o contato, precisei pensar em uma forma nova de te propor coisas, e pensei em uma forma onde treino meu curso, e ainda inovo aqui</h2>
   <div id="areaBotoes">
     <button onclick="iniciar()">Começar</button>
   </div>
@@ -52,15 +52,15 @@
 <script>
   const perguntas = [
     {
-      texto: "Você ainda pensa em mim?",
-      respostas: ["Sim", "Não", "Às vezes"]
+      texto: "Você gostou de ter ficado comigo a sós esse fds?",
+      respostas: ["Sim", "Não", "sim e repetiria"]
     },
     {
-      texto: "O que a gente teve foi especial?",
-      respostas: ["Muito", "Um pouco", "Não"]
+      texto: "gostou de ter sentido coisas novas agora que conhece seu corpo um pouco melhor?",
+      respostas: ["Muito", "sim", "Não"]
     },
     {
-      texto: "Existe chance da gente voltar?",
+      texto: "gostou de ter bebido comigo ??",
       respostas: ["Sim", "Talvez", "Não"]
     }
   ];
@@ -97,7 +97,7 @@
   }
 
   function mostrarFinal() {
-    document.getElementById("texto").innerText = "Quer voltar comigo? 💍";
+    document.getElementById("texto").innerText = "Quer ir comigo hoje para um lugar reservado, beber cerveja fumar narguile e fazer uma coisa bem gostosa (mas tem que ser tardeeeee)? ";
 
     const area = document.getElementById("areaBotoes");
     area.innerHTML = "";
@@ -105,7 +105,7 @@
     const sim = document.createElement("button");
     sim.innerText = "SIM ❤️";
     sim.onclick = () => {
-      document.getElementById("texto").innerText = "Agora você não tem escolha 😏💖";
+      document.getElementById("texto").innerText = "se clicou no sim, agora me fala que está indo se arrumar, ou me liga pra gente combinar o horário 😏💖";
       area.innerHTML = "";
     };
 
